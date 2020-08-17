@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
   skip: true  # [py2k or win]
 
@@ -24,16 +24,17 @@ requirements:
     - pip
   run:
     - python
+    - wheel
+    - pyzmq
+    - regex
     - future
+    - msgpack
+    - pymongo
     - colorama
     - netifaces
     - setproctitle
-    - regex
-    - pyzmq
-    - msgpack-python
-    - pymongo
-    - munch
-    - wheel
+    - radical.gtod
+    
 
 test:
   imports:
